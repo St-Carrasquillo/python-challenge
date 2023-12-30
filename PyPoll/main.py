@@ -44,26 +44,20 @@ winner = max(candidate_votes, key=candidate_votes.get)
 
 # Print the analysis results to the terminal
 print("Election Results")
-print("-------------------------")
 print(f"Total Votes: {total_votes}")
-print("-------------------------")
 for candidate in candidates:
     print(f"{candidate}: {percentages[candidate]:.2f}% ({candidate_votes[candidate]})")
-print("-------------------------")
 print(f"Winner: {winner}")
-print("-------------------------")
+
 
 
 # Export the analysis results to a text file inside the 'Analysis' folder
 with open(output_file_path, 'w') as output_file:
     output_file.write("Election Results\n")
-    output_file.write("-------------------------\n")
     output_file.write(f"Total Votes: {total_votes}\n")
-    output_file.write("-------------------------\n")
     for candidate in candidates:
-        output_file.write(f"{candidate}: {percentages[candidate]:.2f}% ({candidate_votes[candidate]})\n")
-    output_file.write("-------------------------\n")
+        output_file.write(f"{candidate}: {percentages[candidate]:.2f}% {candidate_votes[candidate]}\n")
     output_file.write(f"Winner: {winner}\n")
-    output_file.write("-------------------------\n")
+    
 
 print(f'Analysis results exported to {output_file_path}.')

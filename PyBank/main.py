@@ -57,7 +57,6 @@ greatest_decrease_amount = changes[max_decrease_index]
 
 # Print the analysis results
 print('Financial Analysis')
-print('---------------------------')    
 print(f'Total Months: {total_months}')
 print(f'Net Total: ${net_total}')
 print(f'Average Change: ${average_change:.2f}')
@@ -67,11 +66,10 @@ print(f'Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decre
 # Export the analysis results, writing 'w' to a text file
 with open(output_file_path, 'w') as output_file:
     output_file.write('Financial Analysis\n')
-    output_file.write('---------------------\n')
     output_file.write(f'Total Months: {total_months}\n')
     output_file.write(f'Net Total: ${net_total}\n')
     output_file.write(f'Average Change: ${average_change:.2f}\n')
-    output_file.write(f'Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase_amount})\n')
-    output_file.write(f'Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease_amount})\n')
+    output_file.write(f'Greatest Increase in Profits: {greatest_increase_date} ${greatest_increase_amount}\n')
+    output_file.write(f'Greatest Decrease in Profits: {greatest_decrease_date} ${greatest_decrease_amount}\n')
 
 print(f'Analysis results exported to {output_file_path}.')
